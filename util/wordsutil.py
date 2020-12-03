@@ -1,12 +1,9 @@
-import os
-import random
-from os.path import dirname, abspath
-# images
 import requests
-from io import BytesIO
+import random
+import io
 
 
-class TwUtil:
+class WordsUtil:
 
     @staticmethod
     def get_text():
@@ -27,7 +24,7 @@ class TwUtil:
         images = []
         for url in urls:
             response = requests.get(url)
-            images.append(BytesIO(response.content))
+            images.append(io.BytesIO(response.content))
         return images
 
     @staticmethod
