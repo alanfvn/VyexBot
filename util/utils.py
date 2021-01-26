@@ -3,6 +3,23 @@ import random
 import io
 
 
+class Util:
+
+    @staticmethod
+    def is_reply(status):
+        bot_id = '889981111916523520'
+
+        if status.truncated:
+            mentions = status.extended_tweet.get("entities").get("user_mentions")
+        else:
+            mentions = status.entities.get("user_mentions")
+
+        for mention in mentions:
+            if mention.get('id_str') == bot_id:
+                return True
+        return False
+
+
 class WordsUtil:
 
     @staticmethod

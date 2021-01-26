@@ -1,7 +1,11 @@
-import time
-
 from util.tweetutil import TweetUtil
 
-while True:
-    TweetUtil().send_tweet()
-    time.sleep(60 * 30)
+
+def main():
+    tw_util = TweetUtil()
+    tw_util.init_stream()
+    while True:
+        pass
+
+
+main()
